@@ -1,0 +1,250 @@
+/* Configuração geral */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0F1827; /* Fundo principal */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.ad-left, .ad-right {
+  flex: 0 0 200px; /* Largura fixa para os anúncios laterais */
+}
+
+.ad {
+  background-color: #ddd;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ad-vertical {
+  height: 600px; /* Altura do anúncio vertical */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a2e;
+  padding: 20px;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre a logo e o texto */
+}
+
+.header-logo {
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+}
+
+.header-text {
+  text-align: left; /* Garante que o texto fique alinhado à esquerda */
+  height: auto;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 50px; /* Ajuste o tamanho da fonte */
+}
+
+.info-text {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 10px; /* Dá um espaço entre o texto e os outros elementos */
+  font-weight: bold;
+  height:max-content;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+.main {
+  margin: 20px auto;
+  max-width: 900px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bank-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bank-selector button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #0353B3;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bank-selector button:hover {
+  background-color: #023E8A;
+}
+
+.chart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #262d47;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  flex: 1;
+  max-width: 800px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 5px;
+}
+
+#period-select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.advertisement {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.advertisement img {
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+select {
+  padding: 10px;
+  background-color: #5989d1;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+select option {
+  color: black;
+}
+
+.error-table-container {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.error-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.error-table th,
+.error-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.error-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.error-table tr:nth-child(even) {
+  background-color: #25395a;
+}
+
+.error-table tr:hover {
+  background-color: #000000;
+}
+
+@media (max-width: 1200px) {
+  .ad-left, .ad-right {
+    display: none; /* Esconde os anúncios laterais em telas menores */
+  }
+
+  .content {
+    max-width: 100%; /* O conteúdo central ocupa toda a largura */
+  }
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 950px) {
+  .chart-container {
+    padding: 10px;
+  }
+
+  canvas {
+    height: 300px !important; /* Reduz a altura do gráfico em telas pequenas */
+  }
+}
+
+/* Diminuir tamanho das bolinhas do gráfico para dispositivos menores */
+@media (max-width: 600px) {
+  .chart-container canvas {
+    height: 300px !important; /* Diminui a altura do gráfico */
+  }
+
+  .chart-container .chartjs-render-monitor {
+    transform: scale(0.8); /* Reduz o tamanho geral do gráfico */
+  }
+}
